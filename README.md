@@ -481,7 +481,113 @@ docker compose down
 docker compose down -v
 ```
 
-Looking Ahead
--------------
+## My Work (Ian Miller - D23124620@mytudublin.ie)
 
-Keep the three services and the `.env` contract throughout the module. Future weeks add spatial models, GeoJSON APIs, external data, authentication, and deployment configuration while retaining this local development workflow.
+This section is the submission evidence for Lab 1. Each item below corresponds to
+one of the five required proofs.
+
+### 1. `docker compose ps` with the PostGIS health check passing
+
+![Docker build and up output](docs/screenshots/docker-build-up.png)
+
+![docker compose ps - all services running, db healthy](docs/screenshots/docker-compose-ps.png)
+
+```
+NAME                         IMAGE                    SERVICE   STATUS
+hello-map-dublin-db-1        postgis/postgis:16-3.4   db        Up (healthy)
+hello-map-dublin-pgadmin-1   dpage/pgadmin4:9         pgadmin   Up
+hello-map-dublin-web-1       hello-map-dublin-web     web       Up
+```
+
+### 2. The Hello Map in the browser
+
+The map loads at `http://localhost:8000/`, centres on Dublin (53.3498, -6.2603),
+supports zoom and pan, and shows the three required markers with popup text.
+The screenshot below has the Temple Bar popup open.
+
+![Hello Map Dublin with Temple Bar popup open](docs/screenshots/hello-map-browser.png)
+
+### 3. pgAdmin connected to the `Hello Map PostGIS` server
+
+The server is registered against host `db` on port `5432`, with `hello_map_dublin`
+as the maintenance database. The object explorer shows the connected server and
+both databases.
+
+![pgAdmin connected to Hello Map PostGIS showing hello_map_dublin](docs/screenshots/pgadmin-server-connected.png)
+
+### 4. The result of `SELECT PostGIS_Version();`
+
+Run in the pgAdmin Query Tool against `hello_map_dublin`:
+
+```sql
+SELECT PostGIS_Version();
+```
+
+Result:
+
+```
+postgis_version
+---------------------------------------
+3.4 USE_GEOS=1 USE_PROJ=1 USE_STATS=1
+(1 row)
+```
+
+![pgAdmin Query Tool showing the PostGIS_Version result](docs/screenshots/pgadmin-postgis-version.png)
+
+The same check from the command line:
+
+```bash
+source .env
+docker compose exec db psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT PostGIS_Version();"
+```
+
+### 5. The Django admin site with the administrator account
+
+Signed in as the `admin` superuser created above. The dashboard confirms Django can
+read and write to PostgreSQL.
+
+![Django admin dashboard, signed in as admin](docs/screenshots/django-admin-home.png)
+
+![Django admin - users list showing the admin superuser](docs/screenshots/django-admin-users.png)
+
+### Supporting command output
+
+Database migrations, from `docker compose run --rm web python manage.py migrate`:
+
+```
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+```
+
+Superuser creation, from `docker compose run --rm web python manage.py createsuperuser`:
+
+```
+Username (leave blank to use 'root'): admin
+Email address:
+Password:
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+```
