@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)_!bg6)mxs8($_+u@kg&&pt5s1-ywe3a8g%&k=fbu(*w)yxbaz'
+SECRET_KEY = 'iyeh@43yis-l8p57s*u1k(k%qf)9z28hk*y^jwisxyp8akgs-d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
-    'mapping'
+    'mapping',
+    'spatial_analysis',
 ]
 
 MIDDLEWARE = [
