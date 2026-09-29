@@ -1,0 +1,49 @@
+{% extends 'spatial_analysis/base.html' %}
+
+{% block title %}{{ poi.poi_name }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <a href="{% url 'spatial_analysis:dashboard' %}" class="btn btn-outline-secondary btn-sm mb-3">&larr; Back to Dashboard</a>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1 class="card-title">{{ poi.poi_name }}</h1>
+            <p class="text-muted mb-1">{{ poi.get_poi_type_display }}</p>
+            <p class="card-text">{{ poi.description }}</p>
+            <p class="card-text mb-1"><strong>Rating:</strong> {{ poi.rating|default:"N/A" }}</p>
+            <p class="card-text mb-1"><strong>Visitors/day:</strong> {{ poi.visitors_per_day|default:"N/A" }}</p>
+            <p class="card-text mb-0"><strong>Location (lon, lat):</strong> {{ poi.geom.x }}, {{ poi.geom.y }}</p>
+        </div>
+    </div>
+
+    <h2>Nearby Roads (within 1 km)</h2>
+    {% if nearby_roads %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Road Name</th>
+                <th>Type</th>
+                <th>Speed Limit</th>
+                <th>Distance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for road in nearby_roads %}
+            <tr>
+                <td>{{ road.road_name }}</td>
+                <td>{{ road.get_road_type_display }}</td>
+                <td>{{ road.speed_limit }} km/h</td>
+                <td>{{ road.distance.m|floatformat:0 }} m</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-muted">No roads found within 1km of this POI.</p>
+    {% endif %}
+
+    <h2>Geometry (GeoJSON)</h2>
+    <pre class="bg-light p-3 rounded"><code>{{ poi_json }}</code></pre>
+</div>
+{% endblock %}
