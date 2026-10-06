@@ -1,0 +1,83 @@
+{% extends 'spatial_analysis/base.html' %}
+
+{% block title %}Spatial Analysis Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Dublin Spatial Analysis Dashboard</h1>
+    <p class="text-muted">Interactive analysis of Dublin geographic data</p>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Admin Areas</h5>
+                    <h2>{{ total_admin_areas }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Roads</h5>
+                    <h2>{{ total_roads }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Points of Interest</h5>
+                    <h2>{{ total_pois }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Zones</h5>
+                    <h2>{{ total_zones }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-5">Top Attractions</h2>
+    <div class="row">
+        {% for attraction in attractions %}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ attraction.poi_name }}</h5>
+                    <p class="card-text">{{ attraction.description }}</p>
+                    <p class="card-text"><small>Rating: ⭐ {{ attraction.rating }}</small></p>
+                    <a href="{% url 'spatial_analysis:poi_detail' attraction.pk %}" class="btn btn-primary btn-sm">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="mt-5">Administrative Areas</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Area Name</th>
+                <th>Type</th>
+                <th>Population</th>
+                <th>Area (km²)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for area in admin_areas %}
+            <tr>
+                <td>{{ area.area_name }}</td>
+                <td>{{ area.get_area_type_display }}</td>
+                <td>{{ area.population }}</td>
+                <td>{{ area.area_km2 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
