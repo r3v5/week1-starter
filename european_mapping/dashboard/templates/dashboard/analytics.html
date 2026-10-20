@@ -1,0 +1,125 @@
+<!-- dashboard/templates/dashboard/analytics.html -->
+{% extends 'dashboard/base.html' %}
+{% load humanize %}
+
+{% block title %}Analytics - European Mapping{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>European Cities & Regions Analytics</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>City Statistics</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <td><strong>Total Cities:</strong></td>
+                            <td>{{ city_stats.total_cities|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Population:</strong></td>
+                            <td>{{ city_stats.total_population|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Average Population:</strong></td>
+                            <td>{{ city_stats.avg_population|floatformat:0|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Largest City:</strong></td>
+                            <td>{{ city_stats.max_population|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Smallest City:</strong></td>
+                            <td>{{ city_stats.min_population|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Average Area (km²):</strong></td>
+                            <td>{{ city_stats.avg_area|floatformat:2 }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Region Statistics</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <td><strong>Total Regions:</strong></td>
+                            <td>{{ region_stats.total_regions|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Population:</strong></td>
+                            <td>{{ region_stats.total_population|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Average Population:</strong></td>
+                            <td>{{ region_stats.avg_population|floatformat:0|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Largest Region:</strong></td>
+                            <td>{{ region_stats.max_population|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Smallest Region:</strong></td>
+                            <td>{{ region_stats.min_population|intcomma }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Average Area (km²):</strong></td>
+                            <td>{{ region_stats.avg_area|floatformat:2 }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Average GDP per Capita:</strong></td>
+                            <td>€{{ region_stats.avg_gdp_per_capita|floatformat:0|intcomma }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Quick Insights</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="alert alert-info">
+                                <h5>Urban Density</h5>
+                                <p>Cities have an average area of {{ city_stats.avg_area|floatformat:2 }} km² with {{ city_stats.avg_population|floatformat:0|intcomma }} residents on average.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="alert alert-success">
+                                <h5>Regional Scale</h5>
+                                <p>Regions are much larger, averaging {{ region_stats.avg_area|floatformat:2 }} km² with {{ region_stats.avg_population|floatformat:0|intcomma }} residents.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="alert alert-warning">
+                                <h5>Economic Overview</h5>
+                                <p>Average regional GDP per capita is €{{ region_stats.avg_gdp_per_capita|floatformat:0|intcomma }}.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="{% url 'dashboard_index' %}" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

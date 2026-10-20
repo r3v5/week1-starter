@@ -1,0 +1,2805 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": 1,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1278,
+          51.5074
+        ]
+      },
+      "properties": {
+        "name": "London",
+        "country": "United Kingdom",
+        "population": 8982000,
+        "latitude": 51.5074,
+        "longitude": -0.1278,
+        "city_type": "capital",
+        "urban_area_km2": 1572,
+        "population_density": 33,
+        "gdp_per_capita": 65000,
+        "unemployment_rate": 4.5,
+        "green_space_percentage": 15.2,
+        "elevation": 47,
+        "region_code": "UN23",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 2,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.3522,
+          48.8566
+        ]
+      },
+      "properties": {
+        "name": "Paris",
+        "country": "France",
+        "population": 2161000,
+        "latitude": 48.8566,
+        "longitude": 2.3522,
+        "city_type": "capital",
+        "urban_area_km2": 105,
+        "population_density": 20500,
+        "gdp_per_capita": 68000,
+        "unemployment_rate": 3.8,
+        "green_space_percentage": 18.5,
+        "elevation": 424,
+        "region_code": "FR51",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 3,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.405,
+          52.52
+        ]
+      },
+      "properties": {
+        "name": "Berlin",
+        "country": "Germany",
+        "population": 3669000,
+        "latitude": 52.52,
+        "longitude": 13.405,
+        "city_type": "capital",
+        "urban_area_km2": 891,
+        "population_density": 4119,
+        "gdp_per_capita": 42000,
+        "unemployment_rate": 6.2,
+        "green_space_percentage": 29.8,
+        "elevation": 31,
+        "region_code": "GE11",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 4,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.7038,
+          40.4168
+        ]
+      },
+      "properties": {
+        "name": "Madrid",
+        "country": "Spain",
+        "population": 3223000,
+        "latitude": 40.4168,
+        "longitude": -3.7038,
+        "city_type": "capital",
+        "urban_area_km2": 604,
+        "population_density": 5336,
+        "gdp_per_capita": 37500,
+        "unemployment_rate": 8.1,
+        "green_space_percentage": 21.3,
+        "elevation": 162,
+        "region_code": "SP39",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 5,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4964,
+          41.9028
+        ]
+      },
+      "properties": {
+        "name": "Rome",
+        "country": "Italy",
+        "population": 2873000,
+        "latitude": 41.9028,
+        "longitude": 12.4964,
+        "city_type": "capital",
+        "urban_area_km2": 1285,
+        "population_density": 2236,
+        "gdp_per_capita": 39000,
+        "unemployment_rate": 7.5,
+        "green_space_percentage": 13.2,
+        "elevation": 383,
+        "region_code": "IT97",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 6,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9041,
+          52.3676
+        ]
+      },
+      "properties": {
+        "name": "Amsterdam",
+        "country": "Netherlands",
+        "population": 873000,
+        "latitude": 52.3676,
+        "longitude": 4.9041,
+        "city_type": "capital",
+        "urban_area_km2": 219,
+        "population_density": 3987,
+        "gdp_per_capita": 58000,
+        "unemployment_rate": 3.2,
+        "green_space_percentage": 25.7,
+        "elevation": 191,
+        "region_code": "NE74",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 7,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.3738,
+          48.2082
+        ]
+      },
+      "properties": {
+        "name": "Vienna",
+        "country": "Austria",
+        "population": 1911000,
+        "latitude": 48.2082,
+        "longitude": 16.3738,
+        "city_type": "capital",
+        "urban_area_km2": 414,
+        "population_density": 4616,
+        "gdp_per_capita": 52000,
+        "unemployment_rate": 4.8,
+        "green_space_percentage": 50.3,
+        "elevation": 445,
+        "region_code": "AU36",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 8,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.4378,
+          50.0755
+        ]
+      },
+      "properties": {
+        "name": "Prague",
+        "country": "Czech Republic",
+        "population": 1309000,
+        "latitude": 50.0755,
+        "longitude": 14.4378,
+        "city_type": "capital",
+        "urban_area_km2": 496,
+        "population_density": 2640,
+        "gdp_per_capita": 28000,
+        "unemployment_rate": 2.1,
+        "green_space_percentage": 31.1,
+        "elevation": 236,
+        "region_code": "CZ64",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 9,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.0402,
+          47.4979
+        ]
+      },
+      "properties": {
+        "name": "Budapest",
+        "country": "Hungary",
+        "population": 1752000,
+        "latitude": 47.4979,
+        "longitude": 19.0402,
+        "city_type": "capital",
+        "urban_area_km2": 525,
+        "population_density": 3337,
+        "gdp_per_capita": 22000,
+        "unemployment_rate": 3.4,
+        "green_space_percentage": 28.9,
+        "elevation": 152,
+        "region_code": "HU26",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 10,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.0122,
+          52.2297
+        ]
+      },
+      "properties": {
+        "name": "Warsaw",
+        "country": "Poland",
+        "population": 1790000,
+        "latitude": 52.2297,
+        "longitude": 21.0122,
+        "city_type": "capital",
+        "urban_area_km2": 517,
+        "population_density": 3464,
+        "gdp_per_capita": 18500,
+        "unemployment_rate": 4.7,
+        "green_space_percentage": 25.4,
+        "elevation": 219,
+        "region_code": "PO53",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 11,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.0686,
+          59.3293
+        ]
+      },
+      "properties": {
+        "name": "Stockholm",
+        "country": "Sweden",
+        "population": 975000,
+        "latitude": 59.3293,
+        "longitude": 18.0686,
+        "city_type": "capital",
+        "urban_area_km2": 188,
+        "population_density": 5187,
+        "gdp_per_capita": 62000,
+        "unemployment_rate": 4.1,
+        "green_space_percentage": 44.2,
+        "elevation": 478,
+        "region_code": "SW95",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 12,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.5683,
+          55.6761
+        ]
+      },
+      "properties": {
+        "name": "Copenhagen",
+        "country": "Denmark",
+        "population": 648000,
+        "latitude": 55.6761,
+        "longitude": 12.5683,
+        "city_type": "capital",
+        "urban_area_km2": 88,
+        "population_density": 7267,
+        "gdp_per_capita": 68000,
+        "unemployment_rate": 2.8,
+        "green_space_percentage": 32.1,
+        "elevation": 200,
+        "region_code": "DE75",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 13,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.9384,
+          60.1699
+        ]
+      },
+      "properties": {
+        "name": "Helsinki",
+        "country": "Finland",
+        "population": 658000,
+        "latitude": 60.1699,
+        "longitude": 24.9384,
+        "city_type": "capital",
+        "urban_area_km2": 716,
+        "population_density": 919,
+        "gdp_per_capita": 51000,
+        "unemployment_rate": 6.8,
+        "green_space_percentage": 38.7,
+        "elevation": 348,
+        "region_code": "FI63",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 14,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.7522,
+          59.9139
+        ]
+      },
+      "properties": {
+        "name": "Oslo",
+        "country": "Norway",
+        "population": 697000,
+        "latitude": 59.9139,
+        "longitude": 10.7522,
+        "city_type": "capital",
+        "urban_area_km2": 454,
+        "population_density": 1537,
+        "gdp_per_capita": 78000,
+        "unemployment_rate": 2.4,
+        "green_space_percentage": 42.3,
+        "elevation": 180,
+        "region_code": "NO91",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 15,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.2603,
+          53.3498
+        ]
+      },
+      "properties": {
+        "name": "Dublin",
+        "country": "Ireland",
+        "population": 555000,
+        "latitude": 53.3498,
+        "longitude": -6.2603,
+        "city_type": "capital",
+        "urban_area_km2": 318,
+        "population_density": 1746,
+        "gdp_per_capita": 55000,
+        "unemployment_rate": 5.2,
+        "green_space_percentage": 16.8,
+        "elevation": 469,
+        "region_code": "IR19",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 16,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.1393,
+          38.7223
+        ]
+      },
+      "properties": {
+        "name": "Lisbon",
+        "country": "Portugal",
+        "population": 505000,
+        "latitude": 38.7223,
+        "longitude": -9.1393,
+        "city_type": "capital",
+        "urban_area_km2": 100,
+        "population_density": 5050,
+        "gdp_per_capita": 32000,
+        "unemployment_rate": 6.9,
+        "green_space_percentage": 19.5,
+        "elevation": 141,
+        "region_code": "PO25",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 17,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.3517,
+          50.8503
+        ]
+      },
+      "properties": {
+        "name": "Brussels",
+        "country": "Belgium",
+        "population": 1211000,
+        "latitude": 50.8503,
+        "longitude": 4.3517,
+        "city_type": "capital",
+        "urban_area_km2": 161,
+        "population_density": 7522,
+        "gdp_per_capita": 48000,
+        "unemployment_rate": 7.1,
+        "green_space_percentage": 21.7,
+        "elevation": 90,
+        "region_code": "BE19",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 18,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5417,
+          47.3769
+        ]
+      },
+      "properties": {
+        "name": "Zurich",
+        "country": "Switzerland",
+        "population": 415000,
+        "latitude": 47.3769,
+        "longitude": 8.5417,
+        "city_type": "major",
+        "urban_area_km2": 88,
+        "population_density": 4715,
+        "gdp_per_capita": 89000,
+        "unemployment_rate": 2.1,
+        "green_space_percentage": 26.4,
+        "elevation": 192,
+        "region_code": "SW42",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 19,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.1734,
+          41.3851
+        ]
+      },
+      "properties": {
+        "name": "Barcelona",
+        "country": "Spain",
+        "population": 1620000,
+        "latitude": 41.3851,
+        "longitude": 2.1734,
+        "city_type": "major",
+        "urban_area_km2": 101,
+        "population_density": 16040,
+        "gdp_per_capita": 35000,
+        "unemployment_rate": 12.8,
+        "green_space_percentage": 18.3,
+        "elevation": 114,
+        "region_code": "SP61",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 20,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.19,
+          45.4642
+        ]
+      },
+      "properties": {
+        "name": "Milan",
+        "country": "Italy",
+        "population": 1379000,
+        "latitude": 45.4642,
+        "longitude": 9.19,
+        "city_type": "major",
+        "urban_area_km2": 181,
+        "population_density": 7616,
+        "gdp_per_capita": 44000,
+        "unemployment_rate": 5.9,
+        "green_space_percentage": 12.7,
+        "elevation": 48,
+        "region_code": "IT86",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 21,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.582,
+          48.1351
+        ]
+      },
+      "properties": {
+        "name": "Munich",
+        "country": "Germany",
+        "population": 1488000,
+        "latitude": 48.1351,
+        "longitude": 11.582,
+        "city_type": "major",
+        "urban_area_km2": 310,
+        "population_density": 4800,
+        "gdp_per_capita": 55000,
+        "unemployment_rate": 3.2,
+        "green_space_percentage": 31.5,
+        "elevation": 230,
+        "region_code": "GE75",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 22,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9937,
+          53.5511
+        ]
+      },
+      "properties": {
+        "name": "Hamburg",
+        "country": "Germany",
+        "population": 1899000,
+        "latitude": 53.5511,
+        "longitude": 9.9937,
+        "city_type": "major",
+        "urban_area_km2": 755,
+        "population_density": 2516,
+        "gdp_per_capita": 48000,
+        "unemployment_rate": 4.6,
+        "green_space_percentage": 27.8,
+        "elevation": 168,
+        "region_code": "GE47",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 23,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.2681,
+          40.8518
+        ]
+      },
+      "properties": {
+        "name": "Naples",
+        "country": "Italy",
+        "population": 967000,
+        "latitude": 40.8518,
+        "longitude": 14.2681,
+        "city_type": "major",
+        "urban_area_km2": 117,
+        "population_density": 8267,
+        "gdp_per_capita": 29000,
+        "unemployment_rate": 15.4,
+        "green_space_percentage": 8.9,
+        "elevation": 425,
+        "region_code": "IT13",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 24,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.6869,
+          45.0703
+        ]
+      },
+      "properties": {
+        "name": "Turin",
+        "country": "Italy",
+        "population": 870000,
+        "latitude": 45.0703,
+        "longitude": 7.6869,
+        "city_type": "major",
+        "urban_area_km2": 130,
+        "population_density": 6692,
+        "gdp_per_capita": 38000,
+        "unemployment_rate": 8.7,
+        "green_space_percentage": 14.2,
+        "elevation": 378,
+        "region_code": "IT94",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 25,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9603,
+          50.9375
+        ]
+      },
+      "properties": {
+        "name": "Cologne",
+        "country": "Germany",
+        "population": 1087000,
+        "latitude": 50.9375,
+        "longitude": 6.9603,
+        "city_type": "major",
+        "urban_area_km2": 405,
+        "population_density": 2686,
+        "gdp_per_capita": 47000,
+        "unemployment_rate": 5.1,
+        "green_space_percentage": 22.1,
+        "elevation": 425,
+        "region_code": "GE13",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 26,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.6821,
+          50.1109
+        ]
+      },
+      "properties": {
+        "name": "Frankfurt",
+        "country": "Germany",
+        "population": 753000,
+        "latitude": 50.1109,
+        "longitude": 8.6821,
+        "city_type": "major",
+        "urban_area_km2": 248,
+        "population_density": 3037,
+        "gdp_per_capita": 71000,
+        "unemployment_rate": 4.2,
+        "green_space_percentage": 18.5,
+        "elevation": 347,
+        "region_code": "GE17",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 27,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4777,
+          51.9244
+        ]
+      },
+      "properties": {
+        "name": "Rotterdam",
+        "country": "Netherlands",
+        "population": 651000,
+        "latitude": 51.9244,
+        "longitude": 4.4777,
+        "city_type": "major",
+        "urban_area_km2": 206,
+        "population_density": 3162,
+        "gdp_per_capita": 45000,
+        "unemployment_rate": 7.8,
+        "green_space_percentage": 19.7,
+        "elevation": 271,
+        "region_code": "NE74",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 28,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3763,
+          39.4699
+        ]
+      },
+      "properties": {
+        "name": "Valencia",
+        "country": "Spain",
+        "population": 791000,
+        "latitude": 39.4699,
+        "longitude": -0.3763,
+        "city_type": "regional",
+        "urban_area_km2": 135,
+        "population_density": 5863,
+        "gdp_per_capita": 31000,
+        "unemployment_rate": 11.2,
+        "green_space_percentage": 16.8,
+        "elevation": 401,
+        "region_code": "SP92",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 29,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.9845,
+          37.3891
+        ]
+      },
+      "properties": {
+        "name": "Seville",
+        "country": "Spain",
+        "population": 688000,
+        "latitude": 37.3891,
+        "longitude": -5.9845,
+        "city_type": "regional",
+        "urban_area_km2": 140,
+        "population_density": 4915,
+        "gdp_per_capita": 29000,
+        "unemployment_rate": 13.1,
+        "green_space_percentage": 22.1,
+        "elevation": 425,
+        "region_code": "SP98",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 30,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8357,
+          45.764
+        ]
+      },
+      "properties": {
+        "name": "Lyon",
+        "country": "France",
+        "population": 515000,
+        "latitude": 45.764,
+        "longitude": 4.8357,
+        "city_type": "regional",
+        "urban_area_km2": 47,
+        "population_density": 10957,
+        "gdp_per_capita": 41000,
+        "unemployment_rate": 7.3,
+        "green_space_percentage": 25.3,
+        "elevation": 138,
+        "region_code": "FR39",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 31,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3698,
+          43.2965
+        ]
+      },
+      "properties": {
+        "name": "Marseille",
+        "country": "France",
+        "population": 870000,
+        "latitude": 43.2965,
+        "longitude": 5.3698,
+        "city_type": "major",
+        "urban_area_km2": 241,
+        "population_density": 3609,
+        "gdp_per_capita": 35000,
+        "unemployment_rate": 9.8,
+        "green_space_percentage": 12.4,
+        "elevation": 375,
+        "region_code": "FR41",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 32,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.4442,
+          43.6047
+        ]
+      },
+      "properties": {
+        "name": "Toulouse",
+        "country": "France",
+        "population": 479000,
+        "latitude": 43.6047,
+        "longitude": 1.4442,
+        "city_type": "regional",
+        "urban_area_km2": 118,
+        "population_density": 4060,
+        "gdp_per_capita": 39000,
+        "unemployment_rate": 6.7,
+        "green_space_percentage": 19.8,
+        "elevation": 331,
+        "region_code": "FR34",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 33,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.262,
+          43.7102
+        ]
+      },
+      "properties": {
+        "name": "Nice",
+        "country": "France",
+        "population": 342000,
+        "latitude": 43.7102,
+        "longitude": 7.262,
+        "city_type": "regional",
+        "urban_area_km2": 72,
+        "population_density": 4750,
+        "gdp_per_capita": 42000,
+        "unemployment_rate": 8.4,
+        "green_space_percentage": 13.2,
+        "elevation": 345,
+        "region_code": "FR51",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 34,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5792,
+          44.8378
+        ]
+      },
+      "properties": {
+        "name": "Bordeaux",
+        "country": "France",
+        "population": 254000,
+        "latitude": 44.8378,
+        "longitude": -0.5792,
+        "city_type": "regional",
+        "urban_area_km2": 49,
+        "population_density": 5184,
+        "gdp_per_capita": 43000,
+        "unemployment_rate": 7.1,
+        "green_space_percentage": 33.1,
+        "elevation": 86,
+        "region_code": "FR10",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 35,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5536,
+          47.2184
+        ]
+      },
+      "properties": {
+        "name": "Nantes",
+        "country": "France",
+        "population": 309000,
+        "latitude": 47.2184,
+        "longitude": -1.5536,
+        "city_type": "regional",
+        "urban_area_km2": 65,
+        "population_density": 4754,
+        "gdp_per_capita": 41000,
+        "unemployment_rate": 6.9,
+        "green_space_percentage": 37.8,
+        "elevation": 263,
+        "region_code": "FR86",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 36,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7521,
+          48.5734
+        ]
+      },
+      "properties": {
+        "name": "Strasbourg",
+        "country": "France",
+        "population": 280000,
+        "latitude": 48.5734,
+        "longitude": 7.7521,
+        "city_type": "regional",
+        "urban_area_km2": 78,
+        "population_density": 3590,
+        "gdp_per_capita": 38000,
+        "unemployment_rate": 8.2,
+        "green_space_percentage": 26.7,
+        "elevation": 112,
+        "region_code": "FR32",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 37,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0573,
+          50.6292
+        ]
+      },
+      "properties": {
+        "name": "Lille",
+        "country": "France",
+        "population": 232000,
+        "latitude": 50.6292,
+        "longitude": 3.0573,
+        "city_type": "regional",
+        "urban_area_km2": 35,
+        "population_density": 6629,
+        "gdp_per_capita": 35000,
+        "unemployment_rate": 11.4,
+        "green_space_percentage": 14.5,
+        "elevation": 10,
+        "region_code": "FR28",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 38,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.6778,
+          48.1173
+        ]
+      },
+      "properties": {
+        "name": "Rennes",
+        "country": "France",
+        "population": 217000,
+        "latitude": 48.1173,
+        "longitude": -1.6778,
+        "city_type": "regional",
+        "urban_area_km2": 50,
+        "population_density": 4340,
+        "gdp_per_capita": 40000,
+        "unemployment_rate": 6.8,
+        "green_space_percentage": 42.1,
+        "elevation": 304,
+        "region_code": "FR64",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 39,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8767,
+          43.611
+        ]
+      },
+      "properties": {
+        "name": "Montpellier",
+        "country": "France",
+        "population": 285000,
+        "latitude": 43.611,
+        "longitude": 3.8767,
+        "city_type": "regional",
+        "urban_area_km2": 57,
+        "population_density": 5000,
+        "gdp_per_capita": 37000,
+        "unemployment_rate": 9.3,
+        "green_space_percentage": 21.8,
+        "elevation": 299,
+        "region_code": "FR16",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 40,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7245,
+          45.1885
+        ]
+      },
+      "properties": {
+        "name": "Grenoble",
+        "country": "France",
+        "population": 158000,
+        "latitude": 45.1885,
+        "longitude": 5.7245,
+        "city_type": "regional",
+        "urban_area_km2": 18,
+        "population_density": 8778,
+        "gdp_per_capita": 36000,
+        "unemployment_rate": 8.9,
+        "green_space_percentage": 20.3,
+        "elevation": 222,
+        "region_code": "FR36",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 41,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.1829,
+          48.7758
+        ]
+      },
+      "properties": {
+        "name": "Stuttgart",
+        "country": "Germany",
+        "population": 626000,
+        "latitude": 48.7758,
+        "longitude": 9.1829,
+        "city_type": "major",
+        "urban_area_km2": 207,
+        "population_density": 3024,
+        "gdp_per_capita": 51000,
+        "unemployment_rate": 4.8,
+        "green_space_percentage": 24.7,
+        "elevation": 300,
+        "region_code": "GE10",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 42,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7735,
+          51.2277
+        ]
+      },
+      "properties": {
+        "name": "Düsseldorf",
+        "country": "Germany",
+        "population": 619000,
+        "latitude": 51.2277,
+        "longitude": 6.7735,
+        "city_type": "major",
+        "urban_area_km2": 217,
+        "population_density": 2853,
+        "gdp_per_capita": 58000,
+        "unemployment_rate": 5.6,
+        "green_space_percentage": 19.2,
+        "elevation": 392,
+        "region_code": "GE31",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 43,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.4653,
+          51.5136
+        ]
+      },
+      "properties": {
+        "name": "Dortmund",
+        "country": "Germany",
+        "population": 588000,
+        "latitude": 51.5136,
+        "longitude": 7.4653,
+        "city_type": "major",
+        "urban_area_km2": 280,
+        "population_density": 2100,
+        "gdp_per_capita": 41000,
+        "unemployment_rate": 8.9,
+        "green_space_percentage": 26.8,
+        "elevation": 315,
+        "region_code": "GE87",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 44,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0116,
+          51.4556
+        ]
+      },
+      "properties": {
+        "name": "Essen",
+        "country": "Germany",
+        "population": 583000,
+        "latitude": 51.4556,
+        "longitude": 7.0116,
+        "city_type": "major",
+        "urban_area_km2": 210,
+        "population_density": 2777,
+        "gdp_per_capita": 39000,
+        "unemployment_rate": 9.7,
+        "green_space_percentage": 23.4,
+        "elevation": 200,
+        "region_code": "GE59",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 45,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.3731,
+          51.3397
+        ]
+      },
+      "properties": {
+        "name": "Leipzig",
+        "country": "Germany",
+        "population": 587000,
+        "latitude": 51.3397,
+        "longitude": 12.3731,
+        "city_type": "major",
+        "urban_area_km2": 297,
+        "population_density": 1977,
+        "gdp_per_capita": 38000,
+        "unemployment_rate": 7.3,
+        "green_space_percentage": 31.2,
+        "elevation": 32,
+        "region_code": "GE25",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 46,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.8017,
+          53.0793
+        ]
+      },
+      "properties": {
+        "name": "Bremen",
+        "country": "Germany",
+        "population": 569000,
+        "latitude": 53.0793,
+        "longitude": 8.8017,
+        "city_type": "major",
+        "urban_area_km2": 325,
+        "population_density": 1751,
+        "gdp_per_capita": 44000,
+        "unemployment_rate": 6.1,
+        "green_space_percentage": 21.8,
+        "elevation": 53,
+        "region_code": "GE50",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 47,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.7373,
+          51.0504
+        ]
+      },
+      "properties": {
+        "name": "Dresden",
+        "country": "Germany",
+        "population": 556000,
+        "latitude": 51.0504,
+        "longitude": 13.7373,
+        "city_type": "major",
+        "urban_area_km2": 328,
+        "population_density": 1695,
+        "gdp_per_capita": 42000,
+        "unemployment_rate": 5.8,
+        "green_space_percentage": 34.6,
+        "elevation": 47,
+        "region_code": "GE38",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 48,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.732,
+          52.3759
+        ]
+      },
+      "properties": {
+        "name": "Hanover",
+        "country": "Germany",
+        "population": 535000,
+        "latitude": 52.3759,
+        "longitude": 9.732,
+        "city_type": "major",
+        "urban_area_km2": 204,
+        "population_density": 2623,
+        "gdp_per_capita": 46000,
+        "unemployment_rate": 6.4,
+        "green_space_percentage": 19.7,
+        "elevation": 372,
+        "region_code": "GE27",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 49,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.0767,
+          49.4521
+        ]
+      },
+      "properties": {
+        "name": "Nuremberg",
+        "country": "Germany",
+        "population": 518000,
+        "latitude": 49.4521,
+        "longitude": 11.0767,
+        "city_type": "major",
+        "urban_area_km2": 186,
+        "population_density": 2785,
+        "gdp_per_capita": 43000,
+        "unemployment_rate": 5.2,
+        "green_space_percentage": 24.1,
+        "elevation": 218,
+        "region_code": "GE89",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 50,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7623,
+          51.4344
+        ]
+      },
+      "properties": {
+        "name": "Duisburg",
+        "country": "Germany",
+        "population": 498000,
+        "latitude": 51.4344,
+        "longitude": 6.7623,
+        "city_type": "regional",
+        "urban_area_km2": 233,
+        "population_density": 2138,
+        "gdp_per_capita": 37000,
+        "unemployment_rate": 11.2,
+        "green_space_percentage": 16.3,
+        "elevation": 63,
+        "region_code": "GE49",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 51,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.8904,
+          52.4862
+        ]
+      },
+      "properties": {
+        "name": "Birmingham",
+        "country": "United Kingdom",
+        "population": 1141000,
+        "latitude": 52.4862,
+        "longitude": -1.8904,
+        "city_type": "major",
+        "urban_area_km2": 268,
+        "population_density": 4259,
+        "gdp_per_capita": 29000,
+        "unemployment_rate": 7.8,
+        "green_space_percentage": 15.4,
+        "elevation": 117,
+        "region_code": "UN69",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 52,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.5491,
+          53.8008
+        ]
+      },
+      "properties": {
+        "name": "Leeds",
+        "country": "United Kingdom",
+        "population": 789000,
+        "latitude": 53.8008,
+        "longitude": -1.5491,
+        "city_type": "major",
+        "urban_area_km2": 552,
+        "population_density": 1430,
+        "gdp_per_capita": 32000,
+        "unemployment_rate": 4.2,
+        "green_space_percentage": 19.7,
+        "elevation": 233,
+        "region_code": "UN76",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 53,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.2518,
+          55.8642
+        ]
+      },
+      "properties": {
+        "name": "Glasgow",
+        "country": "United Kingdom",
+        "population": 635000,
+        "latitude": 55.8642,
+        "longitude": -4.2518,
+        "city_type": "major",
+        "urban_area_km2": 175,
+        "population_density": 3629,
+        "gdp_per_capita": 31000,
+        "unemployment_rate": 6.8,
+        "green_space_percentage": 20.1,
+        "elevation": 394,
+        "region_code": "UN98",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 54,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4701,
+          53.3811
+        ]
+      },
+      "properties": {
+        "name": "Sheffield",
+        "country": "United Kingdom",
+        "population": 584000,
+        "latitude": 53.3811,
+        "longitude": -1.4701,
+        "city_type": "major",
+        "urban_area_km2": 368,
+        "population_density": 1587,
+        "gdp_per_capita": 28000,
+        "unemployment_rate": 4.3,
+        "green_space_percentage": 22.6,
+        "elevation": 331,
+        "region_code": "UN95",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 55,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7594,
+          53.796
+        ]
+      },
+      "properties": {
+        "name": "Bradford",
+        "country": "United Kingdom",
+        "population": 537000,
+        "latitude": 53.796,
+        "longitude": -1.7594,
+        "city_type": "regional",
+        "urban_area_km2": 366,
+        "population_density": 1467,
+        "gdp_per_capita": 25000,
+        "unemployment_rate": 5.9,
+        "green_space_percentage": 13.8,
+        "elevation": 116,
+        "region_code": "UN59",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 56,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1883,
+          55.9533
+        ]
+      },
+      "properties": {
+        "name": "Edinburgh",
+        "country": "United Kingdom",
+        "population": 524000,
+        "latitude": 55.9533,
+        "longitude": -3.1883,
+        "city_type": "capital",
+        "urban_area_km2": 264,
+        "population_density": 1985,
+        "gdp_per_capita": 38000,
+        "unemployment_rate": 3.4,
+        "green_space_percentage": 26.3,
+        "elevation": 296,
+        "region_code": "UN18",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 57,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9916,
+          53.4084
+        ]
+      },
+      "properties": {
+        "name": "Liverpool",
+        "country": "United Kingdom",
+        "population": 498000,
+        "latitude": 53.4084,
+        "longitude": -2.9916,
+        "city_type": "major",
+        "urban_area_km2": 111,
+        "population_density": 4486,
+        "gdp_per_capita": 27000,
+        "unemployment_rate": 8.7,
+        "green_space_percentage": 17.9,
+        "elevation": 416,
+        "region_code": "UN60",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 58,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.2426,
+          53.4808
+        ]
+      },
+      "properties": {
+        "name": "Manchester",
+        "country": "United Kingdom",
+        "population": 547000,
+        "latitude": 53.4808,
+        "longitude": -2.2426,
+        "city_type": "major",
+        "urban_area_km2": 116,
+        "population_density": 4716,
+        "gdp_per_capita": 33000,
+        "unemployment_rate": 6.2,
+        "green_space_percentage": 18.5,
+        "elevation": 385,
+        "region_code": "UN85",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 59,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.3615,
+          38.1157
+        ]
+      },
+      "properties": {
+        "name": "Palermo",
+        "country": "Italy",
+        "population": 673000,
+        "latitude": 38.1157,
+        "longitude": 13.3615,
+        "city_type": "regional",
+        "urban_area_km2": 158,
+        "population_density": 4259,
+        "gdp_per_capita": 24000,
+        "unemployment_rate": 18.3,
+        "green_space_percentage": 11.2,
+        "elevation": 165,
+        "region_code": "IT44",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 60,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.9463,
+          44.4056
+        ]
+      },
+      "properties": {
+        "name": "Genoa",
+        "country": "Italy",
+        "population": 580000,
+        "latitude": 44.4056,
+        "longitude": 8.9463,
+        "city_type": "major",
+        "urban_area_km2": 243,
+        "population_density": 2387,
+        "gdp_per_capita": 35000,
+        "unemployment_rate": 9.1,
+        "green_space_percentage": 15.7,
+        "elevation": 338,
+        "region_code": "IT84",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 61,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.3426,
+          44.4949
+        ]
+      },
+      "properties": {
+        "name": "Bologna",
+        "country": "Italy",
+        "population": 389000,
+        "latitude": 44.4949,
+        "longitude": 11.3426,
+        "city_type": "major",
+        "urban_area_km2": 141,
+        "population_density": 2760,
+        "gdp_per_capita": 41000,
+        "unemployment_rate": 4.8,
+        "green_space_percentage": 28.4,
+        "elevation": 212,
+        "region_code": "IT51",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 62,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.2558,
+          43.7696
+        ]
+      },
+      "properties": {
+        "name": "Florence",
+        "country": "Italy",
+        "population": 383000,
+        "latitude": 43.7696,
+        "longitude": 11.2558,
+        "city_type": "major",
+        "urban_area_km2": 102,
+        "population_density": 3756,
+        "gdp_per_capita": 38000,
+        "unemployment_rate": 6.3,
+        "green_space_percentage": 20.1,
+        "elevation": 65,
+        "region_code": "IT27",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 63,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.8719,
+          41.1171
+        ]
+      },
+      "properties": {
+        "name": "Bari",
+        "country": "Italy",
+        "population": 320000,
+        "latitude": 41.1171,
+        "longitude": 16.8719,
+        "city_type": "regional",
+        "urban_area_km2": 117,
+        "population_density": 2735,
+        "gdp_per_capita": 26000,
+        "unemployment_rate": 11.7,
+        "green_space_percentage": 8.9,
+        "elevation": 276,
+        "region_code": "IT48",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 64,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.083,
+          37.5079
+        ]
+      },
+      "properties": {
+        "name": "Catania",
+        "country": "Italy",
+        "population": 311000,
+        "latitude": 37.5079,
+        "longitude": 15.083,
+        "city_type": "regional",
+        "urban_area_km2": 180,
+        "population_density": 1728,
+        "gdp_per_capita": 23000,
+        "unemployment_rate": 15.8,
+        "green_space_percentage": 7.3,
+        "elevation": 141,
+        "region_code": "IT40",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 65,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8891,
+          41.6488
+        ]
+      },
+      "properties": {
+        "name": "Zaragoza",
+        "country": "Spain",
+        "population": 675000,
+        "latitude": 41.6488,
+        "longitude": -0.8891,
+        "city_type": "regional",
+        "urban_area_km2": 974,
+        "population_density": 693,
+        "gdp_per_capita": 32000,
+        "unemployment_rate": 10.4,
+        "green_space_percentage": 18.7,
+        "elevation": 252,
+        "region_code": "SP64",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 66,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.4214,
+          36.7213
+        ]
+      },
+      "properties": {
+        "name": "Málaga",
+        "country": "Spain",
+        "population": 574000,
+        "latitude": 36.7213,
+        "longitude": -4.4214,
+        "city_type": "regional",
+        "urban_area_km2": 395,
+        "population_density": 1453,
+        "gdp_per_capita": 30000,
+        "unemployment_rate": 16.2,
+        "green_space_percentage": 12.3,
+        "elevation": 449,
+        "region_code": "SP85",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 67,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.1307,
+          37.9922
+        ]
+      },
+      "properties": {
+        "name": "Murcia",
+        "country": "Spain",
+        "population": 453000,
+        "latitude": 37.9922,
+        "longitude": -1.1307,
+        "city_type": "regional",
+        "urban_area_km2": 882,
+        "population_density": 514,
+        "gdp_per_capita": 28000,
+        "unemployment_rate": 12.8,
+        "green_space_percentage": 19.4,
+        "elevation": 157,
+        "region_code": "SP59",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 68,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.6502,
+          39.5696
+        ]
+      },
+      "properties": {
+        "name": "Palma",
+        "country": "Spain",
+        "population": 416000,
+        "latitude": 39.5696,
+        "longitude": 2.6502,
+        "city_type": "regional",
+        "urban_area_km2": 209,
+        "population_density": 1991,
+        "gdp_per_capita": 34000,
+        "unemployment_rate": 8.7,
+        "green_space_percentage": 14.8,
+        "elevation": 23,
+        "region_code": "SP39",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 69,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -15.43,
+          28.1248
+        ]
+      },
+      "properties": {
+        "name": "Las Palmas",
+        "country": "Spain",
+        "population": 379000,
+        "latitude": 28.1248,
+        "longitude": -15.43,
+        "city_type": "regional",
+        "urban_area_km2": 101,
+        "population_density": 3752,
+        "gdp_per_capita": 27000,
+        "unemployment_rate": 13.4,
+        "green_space_percentage": 11.6,
+        "elevation": 313,
+        "region_code": "SP80",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 70,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9253,
+          43.2627
+        ]
+      },
+      "properties": {
+        "name": "Bilbao",
+        "country": "Spain",
+        "population": 346000,
+        "latitude": 43.2627,
+        "longitude": -2.9253,
+        "city_type": "regional",
+        "urban_area_km2": 41,
+        "population_density": 8439,
+        "gdp_per_capita": 36000,
+        "unemployment_rate": 9.8,
+        "green_space_percentage": 21.7,
+        "elevation": 414,
+        "region_code": "SP11",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 71,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.9444,
+          40.6401
+        ]
+      },
+      "properties": {
+        "name": "Thessaloniki",
+        "country": "Greece",
+        "population": 325000,
+        "latitude": 40.6401,
+        "longitude": 22.9444,
+        "city_type": "major",
+        "urban_area_km2": 19,
+        "population_density": 17105,
+        "gdp_per_capita": 22000,
+        "unemployment_rate": 17.1,
+        "green_space_percentage": 8.4,
+        "elevation": 348,
+        "region_code": "GR22",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 72,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7348,
+          37.9755
+        ]
+      },
+      "properties": {
+        "name": "Athens",
+        "country": "Greece",
+        "population": 664000,
+        "latitude": 37.9755,
+        "longitude": 23.7348,
+        "city_type": "capital",
+        "urban_area_km2": 39,
+        "population_density": 17026,
+        "gdp_per_capita": 24000,
+        "unemployment_rate": 16.8,
+        "green_space_percentage": 9.2,
+        "elevation": 88,
+        "region_code": "GR51",
+        "population_year": 2022,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 73,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.6291,
+          41.1579
+        ]
+      },
+      "properties": {
+        "name": "Porto",
+        "country": "Portugal",
+        "population": 238000,
+        "latitude": 41.1579,
+        "longitude": -8.6291,
+        "city_type": "major",
+        "urban_area_km2": 41,
+        "population_density": 5805,
+        "gdp_per_capita": 28000,
+        "unemployment_rate": 8.9,
+        "green_space_percentage": 16.3,
+        "elevation": 443,
+        "region_code": "PO60",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 74,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.4229,
+          41.5518
+        ]
+      },
+      "properties": {
+        "name": "Braga",
+        "country": "Portugal",
+        "population": 193000,
+        "latitude": 41.5518,
+        "longitude": -8.4229,
+        "city_type": "regional",
+        "urban_area_km2": 184,
+        "population_density": 1049,
+        "gdp_per_capita": 25000,
+        "unemployment_rate": 7.2,
+        "green_space_percentage": 35.7,
+        "elevation": 303,
+        "region_code": "PO71",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 75,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.3007,
+          52.0705
+        ]
+      },
+      "properties": {
+        "name": "The Hague",
+        "country": "Netherlands",
+        "population": 545000,
+        "latitude": 52.0705,
+        "longitude": 4.3007,
+        "city_type": "major",
+        "urban_area_km2": 98,
+        "population_density": 5561,
+        "gdp_per_capita": 52000,
+        "unemployment_rate": 4.1,
+        "green_space_percentage": 27.8,
+        "elevation": 407,
+        "region_code": "NE50",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 76,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.1214,
+          52.0907
+        ]
+      },
+      "properties": {
+        "name": "Utrecht",
+        "country": "Netherlands",
+        "population": 357000,
+        "latitude": 52.0907,
+        "longitude": 5.1214,
+        "city_type": "major",
+        "urban_area_km2": 99,
+        "population_density": 3606,
+        "gdp_per_capita": 47000,
+        "unemployment_rate": 3.8,
+        "green_space_percentage": 22.4,
+        "elevation": 188,
+        "region_code": "NE86",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 77,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4697,
+          51.4416
+        ]
+      },
+      "properties": {
+        "name": "Eindhoven",
+        "country": "Netherlands",
+        "population": 234000,
+        "latitude": 51.4416,
+        "longitude": 5.4697,
+        "city_type": "regional",
+        "urban_area_km2": 88,
+        "population_density": 2659,
+        "gdp_per_capita": 41000,
+        "unemployment_rate": 5.4,
+        "green_space_percentage": 18.6,
+        "elevation": 51,
+        "region_code": "NE20",
+        "population_year": 2023,
+        "data_source": "European Urban Planning Agency"
+      }
+    },
+    {
+      "id": 78,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.373558000600944,
+          52.84586494853313
+        ]
+      },
+      "properties": {
+        "name": "City_1365",
+        "country": "Portugal",
+        "population": 124008,
+        "latitude": 52.84586494853313,
+        "longitude": 29.373558000600944,
+        "city_type": "town",
+        "urban_area_km2": 132.5378976743043,
+        "population_density": 935.6418215168503,
+        "gdp_per_capita": 40757,
+        "unemployment_rate": 12.890908186252327,
+        "green_space_percentage": 23.99156327710148,
+        "elevation": 184,
+        "region_code": "PO55",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 79,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.36176730182558,
+          68.70671105397037
+        ]
+      },
+      "properties": {
+        "name": "City_8618",
+        "country": "Hungary",
+        "population": 867395,
+        "latitude": 68.70671105397037,
+        "longitude": 13.36176730182558,
+        "city_type": "town",
+        "urban_area_km2": 402.25753468023686,
+        "population_density": 2156.3175956157315,
+        "gdp_per_capita": 62115,
+        "unemployment_rate": 11.885819226468557,
+        "green_space_percentage": 33.386940643808735,
+        "elevation": 458,
+        "region_code": "HU33",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 80,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.087189369818212,
+          42.76325172568507
+        ]
+      },
+      "properties": {
+        "name": "City_7035",
+        "country": "Sweden",
+        "population": 1419644,
+        "latitude": 42.76325172568507,
+        "longitude": 24.087189369818212,
+        "city_type": "town",
+        "urban_area_km2": 758.2286682718117,
+        "population_density": 1872.316438833308,
+        "gdp_per_capita": 40650,
+        "unemployment_rate": 14.597734499552521,
+        "green_space_percentage": 29.94353498327622,
+        "elevation": 312,
+        "region_code": "SW71",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 81,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.88864443656503,
+          56.676015266141405
+        ]
+      },
+      "properties": {
+        "name": "City_9823",
+        "country": "Portugal",
+        "population": 872058,
+        "latitude": 56.676015266141405,
+        "longitude": 16.88864443656503,
+        "city_type": "regional",
+        "urban_area_km2": 27.87871599355133,
+        "population_density": 31280.421960671254,
+        "gdp_per_capita": 67520,
+        "unemployment_rate": 5.384523618774073,
+        "green_space_percentage": 23.50779552983268,
+        "elevation": 426,
+        "region_code": "PO52",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 82,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.437117045882037,
+          56.237473210234825
+        ]
+      },
+      "properties": {
+        "name": "City_3823",
+        "country": "France",
+        "population": 264911,
+        "latitude": 56.237473210234825,
+        "longitude": 4.437117045882037,
+        "city_type": "regional",
+        "urban_area_km2": 76.89389723317973,
+        "population_density": 3445.149869262848,
+        "gdp_per_capita": 31854,
+        "unemployment_rate": 6.514945769013112,
+        "green_space_percentage": 43.71338661536715,
+        "elevation": 213,
+        "region_code": "FR54",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 83,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.744617994477627,
+          36.69551965595913
+        ]
+      },
+      "properties": {
+        "name": "City_6468",
+        "country": "Greece",
+        "population": 1211738,
+        "latitude": 36.69551965595913,
+        "longitude": 2.744617994477627,
+        "city_type": "regional",
+        "urban_area_km2": 547.7742315061582,
+        "population_density": 2212.1120898078925,
+        "gdp_per_capita": 37438,
+        "unemployment_rate": 10.331608714584572,
+        "green_space_percentage": 10.360399882047275,
+        "elevation": 152,
+        "region_code": "GR39",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 84,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.93739080980159,
+          52.471122061481005
+        ]
+      },
+      "properties": {
+        "name": "City_1525",
+        "country": "Germany",
+        "population": 1410957,
+        "latitude": 52.471122061481005,
+        "longitude": 26.93739080980159,
+        "city_type": "major",
+        "urban_area_km2": 666.804637747089,
+        "population_density": 2115.997580291514,
+        "gdp_per_capita": 35308,
+        "unemployment_rate": 11.138362603012647,
+        "green_space_percentage": 11.013021321859096,
+        "elevation": 429,
+        "region_code": "GE68",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 85,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.32730700517726,
+          37.649775156111644
+        ]
+      },
+      "properties": {
+        "name": "City_5317",
+        "country": "Denmark",
+        "population": 429659,
+        "latitude": 37.649775156111644,
+        "longitude": 19.32730700517726,
+        "city_type": "major",
+        "urban_area_km2": 777.091097001653,
+        "population_density": 552.9068620883788,
+        "gdp_per_capita": 56881,
+        "unemployment_rate": 8.880789536411246,
+        "green_space_percentage": 15.873920237798929,
+        "elevation": 60,
+        "region_code": "DE46",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 86,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.196637575177327,
+          63.23764867774615
+        ]
+      },
+      "properties": {
+        "name": "City_8188",
+        "country": "Denmark",
+        "population": 268964,
+        "latitude": 63.23764867774615,
+        "longitude": 19.196637575177327,
+        "city_type": "major",
+        "urban_area_km2": 351.54424028343993,
+        "population_density": 765.0928935235637,
+        "gdp_per_capita": 25970,
+        "unemployment_rate": 2.1912111705341712,
+        "green_space_percentage": 12.024017024241992,
+        "elevation": 297,
+        "region_code": "DE18",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 87,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.962166824142479,
+          51.36595036289976
+        ]
+      },
+      "properties": {
+        "name": "City_2446",
+        "country": "Denmark",
+        "population": 1340258,
+        "latitude": 51.36595036289976,
+        "longitude": 12.962166824142479,
+        "city_type": "town",
+        "urban_area_km2": 189.37354848198444,
+        "population_density": 7077.324213141108,
+        "gdp_per_capita": 35044,
+        "unemployment_rate": 10.706274332775893,
+        "green_space_percentage": 18.371923413273432,
+        "elevation": 555,
+        "region_code": "DE11",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 88,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.23004197034517,
+          40.30730565923408
+        ]
+      },
+      "properties": {
+        "name": "City_5253",
+        "country": "Portugal",
+        "population": 976230,
+        "latitude": 40.30730565923408,
+        "longitude": 10.23004197034517,
+        "city_type": "major",
+        "urban_area_km2": 347.2027027317001,
+        "population_density": 2811.700462926347,
+        "gdp_per_capita": 62523,
+        "unemployment_rate": 6.151536245815663,
+        "green_space_percentage": 12.59699022789351,
+        "elevation": 102,
+        "region_code": "PO51",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 89,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.92375161223336,
+          35.99978601480166
+        ]
+      },
+      "properties": {
+        "name": "City_5695",
+        "country": "Norway",
+        "population": 1078839,
+        "latitude": 35.99978601480166,
+        "longitude": 14.92375161223336,
+        "city_type": "regional",
+        "urban_area_km2": 450.0875988402575,
+        "population_density": 2396.9533992490547,
+        "gdp_per_capita": 47873,
+        "unemployment_rate": 12.359575897752967,
+        "green_space_percentage": 22.793213157956217,
+        "elevation": 785,
+        "region_code": "NO80",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 90,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.249477556534883,
+          48.92970560404687
+        ]
+      },
+      "properties": {
+        "name": "City_5074",
+        "country": "France",
+        "population": 1494734,
+        "latitude": 48.92970560404687,
+        "longitude": -0.2494775565348828,
+        "city_type": "town",
+        "urban_area_km2": 430.8404265265683,
+        "population_density": 3469.344815319519,
+        "gdp_per_capita": 67361,
+        "unemployment_rate": 11.887230354176976,
+        "green_space_percentage": 11.672530758428291,
+        "elevation": 379,
+        "region_code": "FR52",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 91,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.132908248091591,
+          35.312373911613385
+        ]
+      },
+      "properties": {
+        "name": "City_3841",
+        "country": "Germany",
+        "population": 1023347,
+        "latitude": 35.312373911613385,
+        "longitude": -4.132908248091591,
+        "city_type": "town",
+        "urban_area_km2": 598.5863870236054,
+        "population_density": 1709.6062025206797,
+        "gdp_per_capita": 50267,
+        "unemployment_rate": 10.73935302737615,
+        "green_space_percentage": 26.488931001211313,
+        "elevation": 10,
+        "region_code": "GE54",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 92,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.92005256915771,
+          67.12622258065929
+        ]
+      },
+      "properties": {
+        "name": "City_4860",
+        "country": "Austria",
+        "population": 592362,
+        "latitude": 67.12622258065929,
+        "longitude": 16.92005256915771,
+        "city_type": "major",
+        "urban_area_km2": 411.73994109620236,
+        "population_density": 1438.679955174899,
+        "gdp_per_capita": 56879,
+        "unemployment_rate": 14.531609414065795,
+        "green_space_percentage": 29.952492089808146,
+        "elevation": 508,
+        "region_code": "AU82",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 93,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.597379054804582,
+          52.213342625753086
+        ]
+      },
+      "properties": {
+        "name": "City_1376",
+        "country": "United Kingdom",
+        "population": 192419,
+        "latitude": 52.213342625753086,
+        "longitude": -4.597379054804582,
+        "city_type": "major",
+        "urban_area_km2": 301.05418613058373,
+        "population_density": 639.1507205833614,
+        "gdp_per_capita": 39230,
+        "unemployment_rate": 7.608023920217717,
+        "green_space_percentage": 10.33631694403682,
+        "elevation": 86,
+        "region_code": "UN95",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 94,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.240861398907995,
+          43.834144867616615
+        ]
+      },
+      "properties": {
+        "name": "City_7667",
+        "country": "Portugal",
+        "population": 707993,
+        "latitude": 43.834144867616615,
+        "longitude": 28.240861398907995,
+        "city_type": "regional",
+        "urban_area_km2": 537.4091590362681,
+        "population_density": 1317.4189313588154,
+        "gdp_per_capita": 39690,
+        "unemployment_rate": 6.580089706710963,
+        "green_space_percentage": 27.61284464263608,
+        "elevation": 687,
+        "region_code": "PO32",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 95,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.702782435070538,
+          35.7882594265515
+        ]
+      },
+      "properties": {
+        "name": "City_1456",
+        "country": "Greece",
+        "population": 1041249,
+        "latitude": 35.7882594265515,
+        "longitude": -6.702782435070538,
+        "city_type": "regional",
+        "urban_area_km2": 213.10081486992618,
+        "population_density": 4886.180283428593,
+        "gdp_per_capita": 69076,
+        "unemployment_rate": 12.704167949474131,
+        "green_space_percentage": 40.347982310041104,
+        "elevation": 706,
+        "region_code": "GR65",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 96,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.757286121904713,
+          35.36716534136277
+        ]
+      },
+      "properties": {
+        "name": "City_7604",
+        "country": "Hungary",
+        "population": 395061,
+        "latitude": 35.36716534136277,
+        "longitude": 9.757286121904713,
+        "city_type": "town",
+        "urban_area_km2": 710.5274659107416,
+        "population_density": 556.0108777689793,
+        "gdp_per_capita": 49366,
+        "unemployment_rate": 8.33854205050185,
+        "green_space_percentage": 17.033388747877463,
+        "elevation": 670,
+        "region_code": "HU14",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 97,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.576340533784845,
+          46.67429587253623
+        ]
+      },
+      "properties": {
+        "name": "City_8247",
+        "country": "Germany",
+        "population": 784093,
+        "latitude": 46.67429587253623,
+        "longitude": -5.576340533784845,
+        "city_type": "major",
+        "urban_area_km2": 374.0167625587317,
+        "population_density": 2096.411387114967,
+        "gdp_per_capita": 28656,
+        "unemployment_rate": 4.916283086044338,
+        "green_space_percentage": 39.893715564444,
+        "elevation": 449,
+        "region_code": "GE63",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 98,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.536477731165777,
+          54.146464298585556
+        ]
+      },
+      "properties": {
+        "name": "City_4225",
+        "country": "Czech Republic",
+        "population": 1498618,
+        "latitude": 54.146464298585556,
+        "longitude": -6.536477731165777,
+        "city_type": "major",
+        "urban_area_km2": 289.5114325449683,
+        "population_density": 5176.368984210071,
+        "gdp_per_capita": 28145,
+        "unemployment_rate": 8.289648083876614,
+        "green_space_percentage": 22.690597106496668,
+        "elevation": 726,
+        "region_code": "CZ63",
+        "population_year": 2023,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 99,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.670693167536452,
+          39.829007234932185
+        ]
+      },
+      "properties": {
+        "name": "City_6730",
+        "country": "France",
+        "population": 116216,
+        "latitude": 39.829007234932185,
+        "longitude": 2.6706931675364523,
+        "city_type": "town",
+        "urban_area_km2": 239.8012214931697,
+        "population_density": 484.6347290324799,
+        "gdp_per_capita": 34001,
+        "unemployment_rate": 13.334896458705968,
+        "green_space_percentage": 25.638097421896674,
+        "elevation": 38,
+        "region_code": "FR93",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    },
+    {
+      "id": 100,
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.242202085154,
+          49.50885461092744
+        ]
+      },
+      "properties": {
+        "name": "City_2713",
+        "country": "Portugal",
+        "population": 937406,
+        "latitude": 49.50885461092744,
+        "longitude": -3.242202085154,
+        "city_type": "town",
+        "urban_area_km2": 266.0691707071408,
+        "population_density": 3523.1665416501473,
+        "gdp_per_capita": 33442,
+        "unemployment_rate": 12.508605889426423,
+        "green_space_percentage": 36.870642197950254,
+        "elevation": 302,
+        "region_code": "PO17",
+        "population_year": 2022,
+        "data_source": "Generated Data"
+      }
+    }
+  ]
+}

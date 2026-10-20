@@ -1,0 +1,852 @@
+<!-- dashboard/templates/dashboard/index.html -->
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Dashboard - European Urban Planning{% endblock %}
+
+{% block head_extra %}
+<!-- Custom Dashboard CSS -->
+<style>
+    #map { height: 600px; }
+    .control-panel {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .filter-section {
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    .layer-toggle {
+        margin: 5px 0;
+    }
+    .stats-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .export-btn {
+        margin: 5px;
+    }
+    .loading {
+        display: none;
+        text-align: center;
+        padding: 20px;
+    }
+    .feature-info {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background: rgba(255,255,255,0.9);
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+        max-width: 300px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Control Panel -->
+            <div class="col-md-3">
+                <div class="control-panel">
+                    <h5>📊 Data Overview</h5>
+                    <div class="stats-card">
+                        <h6>Total Cities: <span id="total-cities">{{ total_cities }}</span></h6>
+                        <h6>Total Regions: <span id="total-regions">{{ total_regions }}</span></h6>
+                    </div>
+
+                    <!-- Layer Controls -->
+                    <div class="filter-section">
+                        <h6>🗺️ Map Layers</h6>
+                        <div class="layer-toggle">
+                            <input type="checkbox" id="show-cities" checked>
+                            <label for="show-cities">Show Cities</label>
+                        </div>
+                        <div class="layer-toggle">
+                            <input type="checkbox" id="show-regions" checked>
+                            <label for="show-regions">Show Regions</label>
+                        </div>
+                        <div class="layer-toggle">
+                            <input type="checkbox" id="cluster-cities">
+                            <label for="cluster-cities">Cluster Cities</label>
+                        </div>
+                    </div>
+
+                    <!-- Population Filters -->
+                    <div class="filter-section">
+                        <h6>👥 Population Filters</h6>
+                        <div class="mb-2">
+                            <label class="form-label">City Population Range</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" id="city-pop-min" class="form-control form-control-sm" 
+                                           placeholder="Min" value="0">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" id="city-pop-max" class="form-control form-control-sm" 
+                                           placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Region Population Range</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" id="region-pop-min" class="form-control form-control-sm" 
+                                           placeholder="Min" value="0">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" id="region-pop-max" class="form-control form-control-sm" 
+                                           placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Area Filters -->
+                    <div class="filter-section">
+                        <h6>📏 Area Filters</h6>
+                        <div class="mb-2">
+                            <label class="form-label">City Urban Area (km²)</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" id="city-area-min" class="form-control form-control-sm" 
+                                           placeholder="Min" step="0.1">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" id="city-area-max" class="form-control form-control-sm" 
+                                           placeholder="Max" step="0.1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Region Area (km²)</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" id="region-area-min" class="form-control form-control-sm" 
+                                           placeholder="Min">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" id="region-area-max" class="form-control form-control-sm" 
+                                           placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Filters -->
+                    <div class="filter-section">
+                        <h6>🏛️ Category Filters</h6>
+                        <div class="mb-2">
+                            <label class="form-label">Country</label>
+                            <select id="country-filter" class="form-select form-select-sm">
+                                <option value="">All Countries</option>
+                                {% for country in countries %}
+                                <option value="{{ country }}">{{ country }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">City Type</label>
+                            <select id="city-type-filter" class="form-select form-select-sm">
+                                <option value="">All Types</option>
+                                {% for city_type in city_types %}
+                                <option value="{{ city_type }}">{{ city_type|title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Region Type</label>
+                            <select id="region-type-filter" class="form-select form-select-sm">
+                                <option value="">All Types</option>
+                                {% for region_type in region_types %}
+                                <option value="{{ region_type }}">{{ region_type|title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-2">
+                        <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+                        <button id="clear-filters" class="btn btn-outline-secondary">Clear All</button>
+                    </div>
+
+                    <!-- Export Options -->
+                    <div class="filter-section">
+                        <h6>📥 Export Data</h6>
+                        <button id="export-cities" class="btn btn-outline-success export-btn">Cities GeoJSON</button>
+                        <button id="export-regions" class="btn btn-outline-success export-btn">Regions GeoJSON</button>
+                        <button id="export-statistics" class="btn btn-outline-info export-btn">Statistics</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="col-md-9">
+                <div class="position-relative">
+                    <div id="map"></div>
+                    <div class="loading" id="loading">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>Loading data...</p>
+                    </div>
+                    <div class="feature-info" id="feature-info">
+                        <!-- Feature details will be displayed here -->
+                    </div>
+                </div>
+
+                <!-- Results Summary -->
+                <div class="mt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Cities Displayed</h5>
+                                    <h3 class="text-primary" id="cities-count">0</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Regions Displayed</h5>
+                                    <h3 class="text-success" id="regions-count">0</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Total Population</h5>
+                                    <h3 class="text-info" id="total-population">0</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        console.log('🎯 Dashboard script loading...');
+
+        // Handle browser extension errors
+        window.addEventListener('error', function(e) {
+            if (e.message && e.message.includes('message channel closed')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        window.addEventListener('unhandledrejection', function(e) {
+            if (e.reason && e.reason.message && e.reason.message.includes('message channel closed')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Initialize map
+        console.log('🗺️ Initializing map...');
+        const map = L.map('map').setView([54.5, 15.2], 4);
+
+        // Add tile layers
+        const osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        });
+
+        // Add default layer
+        osmLayer.addTo(map);
+        console.log('✅ Map tiles loaded');
+
+        // Layer control
+        const baseLayers = {
+            "OpenStreetMap": osmLayer
+        };
+
+        L.control.layers(baseLayers).addTo(map);
+
+        // Data layers
+        let citiesLayer = L.layerGroup().addTo(map);
+        let regionsLayer = L.layerGroup().addTo(map);
+        console.log('✅ Data layers initialized');
+
+        // Current data
+        let currentCities = [];
+        let currentRegions = [];
+
+        // Utility functions
+        function showLoading(show) {
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.style.display = show ? 'block' : 'none';
+            }
+        }
+
+        function getCityColor(cityType) {
+            const colors = {
+                'capital': '#e74c3c',
+                'major': '#f39c12',
+                'regional': '#3498db',
+                'town': '#95a5a6'
+            };
+            return colors[cityType] || '#95a5a6';
+        }
+
+        function getRegionColor(density) {
+            if (density > 500) return '#8e44ad';
+            if (density > 200) return '#e74c3c';
+            if (density > 100) return '#f39c12';
+            if (density > 50) return '#f1c40f';
+            return '#2ecc71';
+        }
+
+        function showFeatureInfo(properties, type) {
+            const info = document.getElementById('feature-info');
+            if (!info) return;
+
+            let content = `<strong>${properties.name || 'Unknown'}</strong><br>`;
+            if (type === 'city') {
+                content += `Population: ${(properties.population || 0).toLocaleString()}<br>`;
+                content += `Type: ${properties.city_type || 'Unknown'}`;
+            } else {
+                content += `Population: ${(properties.total_population || 0).toLocaleString()}<br>`;
+                content += `Area: ${(properties.area_km2 || 0).toLocaleString()} km²<br>`;
+                content += `Type: ${properties.region_type || 'Unknown'}`;
+            }
+
+            info.innerHTML = content;
+            info.style.display = 'block';
+        }
+
+        function hideFeatureInfo() {
+            const info = document.getElementById('feature-info');
+            if (info) {
+                info.style.display = 'none';
+            }
+        }
+
+        // Data loading functions
+        async function loadCities(filters = {}) {
+            console.log(' Loading cities with filters:', filters);
+            try {
+                const params = new URLSearchParams(filters);
+                const url = `/api/cities/?${params}`;
+                console.log('🔗 Fetching:', url);
+
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log(' Cities response:', data);
+
+                // Handle nested GeoJSON format
+                let features = [];
+                if (data && data.features) {
+                    // Check if features is an array directly
+                    if (Array.isArray(data.features)) {
+                        features = data.features;
+                    }
+                    // Check if features is a nested GeoJSON with its own features array
+                    else if (data.features.features && Array.isArray(data.features.features)) {
+                        features = data.features.features;
+                    }
+                } else if (Array.isArray(data)) {
+                    features = data;
+                }
+
+                currentCities = features;
+                displayCities(features);
+                console.log(` Loaded ${features.length} cities`);
+
+                return features;
+            } catch (error) {
+                console.error(' Error loading cities:', error);
+                currentCities = [];
+                return [];
+            }
+        }
+
+        async function loadRegions(filters = {}) {
+            console.log('🗺️ Loading regions with filters:', filters);
+            try {
+                const params = new URLSearchParams(filters);
+                const url = `/api/regions/?${params}`;
+                console.log('🔗 Fetching:', url);
+
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log(' Regions response:', data);
+
+                // Handle nested GeoJSON format
+                let features = [];
+                if (data && data.features) {
+                    // Check if features is an array directly
+                    if (Array.isArray(data.features)) {
+                        features = data.features;
+                    }
+                    // Check if features is a nested GeoJSON with its own features array
+                    else if (data.features.features && Array.isArray(data.features.features)) {
+                        features = data.features.features;
+                    }
+                } else if (Array.isArray(data)) {
+                    features = data;
+                }
+
+                currentRegions = features;
+                displayRegions(features);
+                console.log(` Loaded ${features.length} regions`);
+
+                return features;
+            } catch (error) {
+                console.error(' Error loading regions:', error);
+                currentRegions = [];
+                return [];
+            }
+        }
+
+        // Display functions
+        function displayCities(cities) {
+            console.log(' Displaying cities:', cities.length);
+            citiesLayer.clearLayers();
+
+            if (!Array.isArray(cities)) {
+                console.warn('Cities data is not an array:', cities);
+                return;
+            }
+
+            let displayed = 0;
+
+            cities.forEach((city, index) => {
+                try {
+                    let coords = null;
+                    let props = null;
+
+                    // Handle GeoJSON format
+                    if (city.geometry && city.geometry.coordinates && city.properties) {
+                        coords = city.geometry.coordinates;
+                        props = city.properties;
+                    }
+                    // Handle PostGIS string format like "SRID=4326;POINT (-0.1278 51.5074)"
+                    else if (city.geometry && typeof city.geometry === 'string' && city.properties) {
+                        const match = city.geometry.match(/POINT\s*\(\s*([^\s]+)\s+([^\s]+)\s*\)/);
+                        if (match) {
+                            coords = [parseFloat(match[1]), parseFloat(match[2])];
+                            props = city.properties;
+                        }
+                    }
+                    // Handle direct object format
+                    else if (city.latitude && city.longitude) {
+                        coords = [city.longitude, city.latitude];
+                        props = city;
+                    }
+                    // Handle properties with lat/lng
+                    else if (city.properties && city.properties.latitude && city.properties.longitude) {
+                        coords = [city.properties.longitude, city.properties.latitude];
+                        props = city.properties;
+                    }
+
+                    if (!coords || coords.length < 2) {
+                        console.warn(`Invalid coordinates for city ${index}:`, city);
+                        return;
+                    }
+
+                    if (!props || !props.name) {
+                        console.warn(`Invalid properties for city ${index}:`, city);
+                        return;
+                    }
+
+                    // Create marker
+                    const lat = coords[1];
+                    const lng = coords[0];
+                    const population = props.population || 0;
+                    const radius = Math.max(3, Math.sqrt(population / 10000));
+
+                    const marker = L.circleMarker([lat, lng], {
+                        radius: radius,
+                        fillColor: getCityColor(props.city_type),
+                        color: '#ffffff',
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    });
+
+                    // Add popup
+                    const popupContent = `
+                        <div>
+                            <h6>${props.name}, ${props.country || 'Unknown'}</h6>
+                            <p><strong>Population:</strong> ${population.toLocaleString()}</p>
+                            <p><strong>Type:</strong> ${props.city_type || 'Unknown'}</p>
+                            ${props.population_density ? `<p><strong>Density:</strong> ${props.population_density.toFixed(1)} people/km²</p>` : ''}
+                        </div>
+                    `;
+
+                    marker.bindPopup(popupContent);
+
+                    // Add event listeners
+                    marker.on('mouseover', () => showFeatureInfo(props, 'city'));
+                    marker.on('mouseout', hideFeatureInfo);
+
+                    citiesLayer.addLayer(marker);
+                    displayed++;
+
+                } catch (error) {
+                    console.error(`Error displaying city ${index}:`, error, city);
+                }
+            });
+
+            console.log(` Successfully displayed ${displayed} cities`);
+        }
+
+        function displayRegions(regions) {
+            console.log('🗺️ Displaying regions:', regions.length);
+            regionsLayer.clearLayers();
+
+            if (!Array.isArray(regions)) {
+                console.warn('Regions data is not an array:', regions);
+                return;
+            }
+
+            let displayed = 0;
+
+            regions.forEach((region, index) => {
+                try {
+                    let geometry = null;
+                    let props = null;
+
+                    // Handle GeoJSON format
+                    if (region.geometry && region.properties) {
+                        geometry = region.geometry;
+                        props = region.properties;
+                    } else if (region.geometry && region.name) {
+                        geometry = region.geometry;
+                        props = region;
+                    }
+
+                    // Skip if geometry is a PostGIS string (regions are more complex to parse)
+                    if (!geometry || typeof geometry === 'string') {
+                        console.warn(`Skipping region with PostGIS string geometry ${index}:`, region);
+                        return;
+                    }
+
+                    if (!geometry.coordinates) {
+                        console.warn(`Invalid geometry for region ${index}:`, region);
+                        return;
+                    }
+
+                    if (!props || !props.name) {
+                        console.warn(`Invalid properties for region ${index}:`, region);
+                        return;
+                    }
+
+                    // Create GeoJSON feature
+                    const geoJsonFeature = {
+                        type: 'Feature',
+                        geometry: geometry,
+                        properties: props
+                    };
+
+                    const layer = L.geoJSON(geoJsonFeature, {
+                        style: {
+                            fillColor: getRegionColor(props.population_density || 0),
+                            weight: 1,
+                            opacity: 1,
+                            color: '#666666',
+                            fillOpacity: 0.5
+                        }
+                    });
+
+                    // Add popup
+                    const popupContent = `
+                        <div>
+                            <h6>${props.name}, ${props.country || 'Unknown'}</h6>
+                            <p><strong>Type:</strong> ${props.region_type || 'Unknown'}</p>
+                            <p><strong>Population:</strong> ${(props.total_population || 0).toLocaleString()}</p>
+                            <p><strong>Area:</strong> ${(props.area_km2 || 0).toLocaleString()} km²</p>
+                        </div>
+                    `;
+
+                    layer.bindPopup(popupContent);
+
+                    // Add event listeners
+                    layer.on('mouseover', () => showFeatureInfo(props, 'region'));
+                    layer.on('mouseout', hideFeatureInfo);
+
+                    regionsLayer.addLayer(layer);
+                    displayed++;
+
+                } catch (error) {
+                    console.error(`Error displaying region ${index}:`, error, region);
+                }
+            });
+
+            console.log(` Successfully displayed ${displayed} regions`);
+        }
+
+        // Update summary
+        function updateResultsSummary() {
+            console.log(' Updating summary...');
+
+            const citiesCount = Array.isArray(currentCities) ? currentCities.length : 0;
+            const regionsCount = Array.isArray(currentRegions) ? currentRegions.length : 0;
+
+            // Update counts
+            const citiesCountEl = document.getElementById('cities-count');
+            const regionsCountEl = document.getElementById('regions-count');
+            const totalPopEl = document.getElementById('total-population');
+
+            if (citiesCountEl) citiesCountEl.textContent = citiesCount;
+            if (regionsCountEl) regionsCountEl.textContent = regionsCount;
+
+            // Calculate total population
+            let totalPopulation = 0;
+
+            if (Array.isArray(currentCities)) {
+                totalPopulation += currentCities.reduce((sum, city) => {
+                    const props = city.properties || city;
+                    return sum + (props.population || 0);
+                }, 0);
+            }
+
+            if (totalPopEl) {
+                totalPopEl.textContent = totalPopulation.toLocaleString();
+            }
+
+            console.log(' Summary updated:', { cities: citiesCount, regions: regionsCount, population: totalPopulation });
+        }
+
+        // Filter functions
+        function getCurrentFilters() {
+            const cityFilters = {};
+            const regionFilters = {};
+
+            // Population filters
+            const cityPopMin = document.getElementById('city-pop-min');
+            const cityPopMax = document.getElementById('city-pop-max');
+            const regionPopMin = document.getElementById('region-pop-min');
+            const regionPopMax = document.getElementById('region-pop-max');
+
+            if (cityPopMin && cityPopMin.value) cityFilters.population_min = cityPopMin.value;
+            if (cityPopMax && cityPopMax.value) cityFilters.population_max = cityPopMax.value;
+            if (regionPopMin && regionPopMin.value) regionFilters.population_min = regionPopMin.value;
+            if (regionPopMax && regionPopMax.value) regionFilters.population_max = regionPopMax.value;
+
+            // Area filters
+            const cityAreaMin = document.getElementById('city-area-min');
+            const cityAreaMax = document.getElementById('city-area-max');
+            const regionAreaMin = document.getElementById('region-area-min');
+            const regionAreaMax = document.getElementById('region-area-max');
+
+            if (cityAreaMin && cityAreaMin.value) cityFilters.urban_area_min = cityAreaMin.value;
+            if (cityAreaMax && cityAreaMax.value) cityFilters.urban_area_max = cityAreaMax.value;
+            if (regionAreaMin && regionAreaMin.value) regionFilters.area_min = regionAreaMin.value;
+            if (regionAreaMax && regionAreaMax.value) regionFilters.area_max = regionAreaMax.value;
+
+            // Category filters
+            const country = document.getElementById('country-filter');
+            const cityType = document.getElementById('city-type-filter');
+            const regionType = document.getElementById('region-type-filter');
+
+            if (country && country.value) {
+                cityFilters.country = country.value;
+                regionFilters.country = country.value;
+            }
+            if (cityType && cityType.value) cityFilters.city_type = cityType.value;
+            if (regionType && regionType.value) regionFilters.region_type = regionType.value;
+
+            return { cities: cityFilters, regions: regionFilters };
+        }
+
+        async function applyFilters() {
+            console.log('🔍 Applying filters...');
+            showLoading(true);
+
+            try {
+                const filters = getCurrentFilters();
+                console.log('Filters to apply:', filters);
+
+                await Promise.all([
+                    loadCities(filters.cities),
+                    loadRegions(filters.regions)
+                ]);
+
+                updateResultsSummary();
+            } catch (error) {
+                console.error('Error applying filters:', error);
+                alert('Error applying filters. Please try again.');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function clearFilters() {
+            console.log('🧹 Clearing filters...');
+
+            // Clear all inputs
+            const inputs = document.querySelectorAll('input[type="number"], select');
+            inputs.forEach(input => {
+                input.value = '';
+            });
+
+            // Reset defaults
+            const cityPopMin = document.getElementById('city-pop-min');
+            const regionPopMin = document.getElementById('region-pop-min');
+            if (cityPopMin) cityPopMin.value = '0';
+            if (regionPopMin) regionPopMin.value = '0';
+
+            // Reload data
+            loadInitialData();
+        }
+
+        function toggleCitiesLayer() {
+            const checkbox = document.getElementById('show-cities');
+            if (checkbox && checkbox.checked) {
+                if (!map.hasLayer(citiesLayer)) {
+                    map.addLayer(citiesLayer);
+                }
+            } else {
+                if (map.hasLayer(citiesLayer)) {
+                    map.removeLayer(citiesLayer);
+                }
+            }
+        }
+
+        function toggleRegionsLayer() {
+            const checkbox = document.getElementById('show-regions');
+            if (checkbox && checkbox.checked) {
+                if (!map.hasLayer(regionsLayer)) {
+                    map.addLayer(regionsLayer);
+                }
+            } else {
+                if (map.hasLayer(regionsLayer)) {
+                    map.removeLayer(regionsLayer);
+                }
+            }
+        }
+
+        // Export functions
+        async function exportData(type) {
+            try {
+                const filters = getCurrentFilters();
+                const params = new URLSearchParams(filters[type] || {});
+                const response = await fetch(`/api/${type}/?${params}`);
+                const data = await response.json();
+
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${type}_export.geojson`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Export error:', error);
+                alert('Export failed. Please try again.');
+            }
+        }
+
+        async function exportStatistics() {
+            try {
+                const [cityStats, regionStats] = await Promise.all([
+                    fetch('/api/cities/statistics/').then(r => r.json()).catch(() => ({})),
+                    fetch('/api/regions/statistics/').then(r => r.json()).catch(() => ({}))
+                ]);
+
+                const stats = {
+                    export_date: new Date().toISOString(),
+                    city_statistics: cityStats,
+                    region_statistics: regionStats
+                };
+
+                const blob = new Blob([JSON.stringify(stats, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `statistics_export.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error('Statistics export error:', error);
+                alert('Statistics export failed. Please try again.');
+            }
+        }
+
+        // Initial data loading
+        async function loadInitialData() {
+            console.log('🚀 Loading initial data...');
+            showLoading(true);
+
+            try {
+                await Promise.all([
+                    loadCities({}),
+                    loadRegions({})
+                ]);
+
+                updateResultsSummary();
+                console.log('✅ Initial data loaded successfully');
+            } catch (error) {
+                console.error('❌ Error loading initial data:', error);
+                alert('Error loading data. Please refresh the page.');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM ready, setting up dashboard...');
+
+            // Set up event listeners
+            const elements = {
+                'apply-filters': applyFilters,
+                'clear-filters': clearFilters,
+                'show-cities': toggleCitiesLayer,
+                'show-regions': toggleRegionsLayer,
+                'export-cities': () => exportData('cities'),
+                'export-regions': () => exportData('regions'),
+                'export-statistics': exportStatistics
+            };
+
+            Object.entries(elements).forEach(([id, handler]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    if (element.type === 'checkbox') {
+                        element.addEventListener('change', handler);
+                    } else {
+                        element.addEventListener('click', handler);
+                    }
+                    console.log(` Event listener added for: ${id}`);
+                } else {
+                    console.warn(` Element not found: ${id}`);
+                }
+            });
+
+            // Load initial data
+            loadInitialData();
+        });
+
+        console.log(' Dashboard script loaded');
+    </script>
+{% endblock %}
