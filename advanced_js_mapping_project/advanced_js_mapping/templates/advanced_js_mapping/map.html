@@ -1,0 +1,73 @@
+{% extends "advanced_js_mapping/base.html" %}
+{% load static %}
+
+{% block title %}Interactive Map | Advanced JS Mapping{% endblock %}
+
+{% block content %}
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <div>
+                        <h1 class="h3 mb-1">Interactive map</h1>
+                        <p class="text-muted mb-0">{{ total_cities }} active cities. Draw a polygon or rectangle to search.</p>
+                    </div>
+                    <div>
+                        <button id="resetView" type="button" class="btn btn-outline-primary btn-sm">Reset view</button>
+                        <button id="clearMap" type="button" class="btn btn-outline-secondary btn-sm">Clear</button>
+                        <button id="exportResults" type="button" class="btn btn-outline-success btn-sm">Export CSV</button>
+                    </div>
+                </div>
+                <div id="map" class="map-container" aria-label="Interactive city map"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="h4">Results <span id="resultsCount" class="badge bg-secondary ms-2">0 found</span></h2>
+                <div id="loadingStatus" class="alert alert-info py-2" role="status" aria-live="polite" hidden>
+                    <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+                    <span id="loadingMessage">Searching for cities...</span>
+                </div>
+                <div id="statsPanel" class="row g-2 mb-3">
+                    <div class="col-6"><small>Population</small><div id="totalPopulation">-</div></div>
+                    <div class="col-6"><small>Average GDP per capita</small><div id="avgGDP">-</div></div>
+                    <div class="col-6"><small>Countries</small><div id="countriesCount">-</div></div>
+                    <div class="col-6"><small>Query time</small><div id="queryTime">-</div></div>
+                </div>
+                <div id="resultsPanel" class="results-panel" aria-live="polite">
+                    <p class="text-muted">Draw a polygon or rectangle to find cities inside it.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ cities_geojson|json_script:"initial-cities" }}
+{{ map_center_lat|json_script:"map-center-lat" }}
+{{ map_center_lng|json_script:"map-center-lng" }}
+{{ map_zoom|json_script:"map-zoom" }}
+<script src="{% static 'advanced_js_mapping/js/ui-controls.js' %}"></script>
+<script src="{% static 'advanced_js_mapping/js/spatial-analysis.js' %}"></script>
+<script src="{% static 'advanced_js_mapping/js/map-interface.js' %}"></script>
+<script>
+    window.INITIAL_CITIES = JSON.parse(JSON.parse(document.getElementById('initial-cities').textContent));
+    window.MAP_CONFIG = {
+        initialView: [
+            JSON.parse(document.getElementById('map-center-lat').textContent),
+            JSON.parse(document.getElementById('map-center-lng').textContent)
+        ],
+        initialZoom: JSON.parse(document.getElementById('map-zoom').textContent)
+    };
+    UIControls.init();
+    SpatialAnalysis.init();
+    AdvancedMapping.init();
+    document.getElementById('resetView').addEventListener('click', () => AdvancedMapping.resetView());
+    document.getElementById('clearMap').addEventListener('click', () => AdvancedMapping.clearAll());
+    document.getElementById('exportResults').addEventListener('click', () => AdvancedMapping.exportResults());
+</script>
+{% endblock %}

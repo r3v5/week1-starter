@@ -1,0 +1,79 @@
+{% extends "advanced_js_mapping/base.html" %}
+
+{% block title %}Analytics | Advanced JS Mapping{% endblock %}
+
+{% block content %}
+<div class="card mb-3"><div class="card-body">
+    <h1>Analytics</h1>
+    <p class="mb-0">City data and polygon-search activity.</p>
+    {% if error_message %}<div class="alert alert-danger mt-3" role="alert">{{ error_message }}</div>{% endif %}
+</div></div>
+<div class="row g-3 mb-3">
+    <div class="col-sm-6 col-xl-3"><div class="card h-100"><div class="card-body"><h2 class="h6">Cities</h2><p class="h3 mb-0">{{ total_cities }}</p></div></div></div>
+    <div class="col-sm-6 col-xl-3"><div class="card h-100"><div class="card-body"><h2 class="h6">Countries</h2><p class="h3 mb-0">{{ total_countries }}</p></div></div></div>
+    <div class="col-sm-6 col-xl-3"><div class="card h-100"><div class="card-body"><h2 class="h6">Total population</h2><p class="h3 mb-0">{{ total_population }}</p></div></div></div>
+    <div class="col-sm-6 col-xl-3"><div class="card h-100"><div class="card-body"><h2 class="h6">Searches</h2><p class="h3 mb-0">{{ total_analyses }}</p><small>{{ recent_analyses }} in the last 7 days</small></div></div></div>
+</div>
+<div class="card mb-3"><div class="card-body">
+    <p class="mb-0">Average cities per search: <strong>{{ avg_cities_per_search }}</strong> · Average query time: <strong>{{ avg_query_time }} ms</strong></p>
+</div></div>
+<div id="chartError" class="alert alert-danger d-none" role="alert">Charts could not load. Check your internet connection.</div>
+<div class="row g-3 mb-3">
+    <div class="col-lg-4"><div class="card h-100"><div class="card-body"><h2 class="h5">Cities by country</h2><canvas id="countriesChart"></canvas></div></div></div>
+    <div class="col-lg-4"><div class="card h-100"><div class="card-body"><h2 class="h5">City types</h2><canvas id="cityTypesChart"></canvas></div></div></div>
+    <div class="col-lg-4"><div class="card h-100"><div class="card-body"><h2 class="h5">Population distribution</h2><canvas id="populationChart"></canvas></div></div></div>
+</div>
+<div class="row g-3">
+    <div class="col-lg-6"><div class="card"><div class="card-body">
+        <h2 class="h5">Largest cities</h2>
+        <div class="table-responsive"><table class="table"><thead><tr><th>City</th><th>Country</th><th>Population</th></tr></thead><tbody>
+            {% for city in top_cities_by_population %}<tr><td>{{ city.name }}</td><td>{{ city.country }}</td><td>{{ city.population }}</td></tr>
+            {% empty %}<tr><td colspan="3">No city data available.</td></tr>{% endfor %}
+        </tbody></table></div>
+        <h2 class="h5">Top cities by GDP per capita</h2>
+        <div class="table-responsive"><table class="table"><thead><tr><th>City</th><th>Country</th><th>GDP per capita (USD)</th></tr></thead><tbody>
+            {% for city in top_cities_by_gdp %}<tr><td>{{ city.name }}</td><td>{{ city.country }}</td><td>{{ city.gdp_per_capita|floatformat:0 }}</td></tr>
+            {% empty %}<tr><td colspan="3">No GDP data available.</td></tr>{% endfor %}
+        </tbody></table></div>
+    </div></div></div>
+    <div class="col-lg-6"><div class="card"><div class="card-body">
+        <h2 class="h5">Recent searches</h2>
+        <div class="table-responsive"><table class="table"><thead><tr><th>Date</th><th>Cities</th><th>Query time</th></tr></thead><tbody>
+            {% for analysis in recent_analyses_list %}<tr><td>{{ analysis.analysis_timestamp }}</td><td>{{ analysis.cities_count }}</td><td>{{ analysis.query_duration_ms|default_if_none:"-" }} ms</td></tr>
+            {% empty %}<tr><td colspan="3">No searches in the last 30 days.</td></tr>{% endfor %}
+        </tbody></table></div>
+    </div></div></div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ countries_labels|json_script:"countries-labels" }}
+{{ countries_data|json_script:"countries-data" }}
+{{ city_types_labels|json_script:"types-labels" }}
+{{ city_types_data|json_script:"types-data" }}
+{{ population_labels|json_script:"population-labels" }}
+{{ population_data|json_script:"population-data" }}
+<script>
+    const readChartData = id => JSON.parse(JSON.parse(document.getElementById(id).textContent));
+    if (typeof Chart === 'undefined') {
+        document.getElementById('chartError').classList.remove('d-none');
+    } else {
+        Chart.defaults.color = '#333333';
+        Chart.defaults.borderColor = '#cccccc';
+        [
+            ['countriesChart', 'countries-labels', 'countries-data', 'bar'],
+            ['cityTypesChart', 'types-labels', 'types-data', 'doughnut'],
+            ['populationChart', 'population-labels', 'population-data', 'bar']
+        ].forEach(([canvas, labels, data, type]) => {
+            new Chart(document.getElementById(canvas), {
+                type,
+                data: {
+                    labels: readChartData(labels),
+                    datasets: [{ label: 'Cities', data: readChartData(data), backgroundColor: ['#003399', '#663399', '#0099cc', '#339966', '#cc6600'] }]
+                },
+                options: { responsive: true, plugins: { legend: { display: type === 'doughnut' } } }
+            });
+        });
+    }
+</script>
+{% endblock %}

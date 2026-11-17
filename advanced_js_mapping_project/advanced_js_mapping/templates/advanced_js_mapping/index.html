@@ -1,0 +1,23 @@
+{% extends "advanced_js_mapping/base.html" %}
+
+{% block title %}Home | Advanced JS Mapping{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-xl-10">
+        <div class="card mb-4">
+            <div class="card-body p-4 p-md-5">
+                <h1>Advanced JavaScript Mapping</h1>
+                <p class="lead">Draw an area on an interactive map and use PostGIS to find the cities inside it.</p>
+                <a class="btn btn-primary me-2" href="{% url 'advanced_js_mapping:map' %}">Open interactive map</a>
+                <a class="btn btn-outline-primary" href="{% url 'advanced_js_mapping:analytics' %}">View analytics</a>
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-4"><div class="card h-100"><div class="card-body"><h2 class="h5">Cities</h2><p class="display-6 mb-0">{{ total_cities }}</p></div></div></div>
+            <div class="col-md-4"><div class="card h-100"><div class="card-body"><h2 class="h5">Countries</h2><p class="display-6 mb-0">{{ total_countries }}</p></div></div></div>
+            <div class="col-md-4"><div class="card h-100"><div class="card-body"><h2 class="h5">Searches in the last 7 days</h2><p class="display-6 mb-0">{{ recent_analyses }}</p></div></div></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
